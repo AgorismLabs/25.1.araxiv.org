@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARA Release: {{ release.release_title }}</title>
+    <title>ARA Release: {{ release.release_title }} - volume {{ release.release_volume }} </title>
     <style>
         /* --- Basic Reset & Typography --- */
         :root {
@@ -187,16 +187,16 @@
         
         <header class="header">
             <h1>Amateur Research Association</h1>
-            <h2>{{ release.release_title }}</h2>
+	    <h2>{{ release.release_title }} - volume {{release.release_volume}}</h2>
             <p class="release-date">Published: {{ release.publication_date }}</p>
-            <a href="{{ release.release_volume }}.pdf" class="download-button">Download Full Volume PDF</a>
+            <a href="{{ release.release_volume }}.pdf" class="download-button">[under construction]Download Full Volume PDF</a>
         </header>
 
         <main>
             <section class="section about-box">
                 <h3>About this Project</h3>
                 <p>
-                    The Amateur Research Association (ARA) is an experimental publishing platform designed for independent researchers, citizen scientists, and industry professionals. Our mission is to provide a venue for high-quality, unaffiliated research that combines the legitimacy of a formal journal with the accessibility of a preprint server.
+                    The Amateur Research Association (ARA) is an experimental publishing platform designed for independent researchers, citizen scientists, and industry professionals. Our mission is to provide a venue for high-quality, unaffiliated research that combines (almost, hopefully) the legitimacy of a formal journal with the accessibility of a preprint server.
                 </p>
                 <p>
                     This release was produced using an automated, open-source workflow. All submissions are typeset in LaTeX, managed via GitHub, and compiled into a cohesive volume. For more information, please see our foundational whitepaper included in this issue.
@@ -217,9 +217,11 @@
                         {% if item.metadata.abstract %}
                         <p class="abstract">{{ item.metadata.abstract }}</p>
                         {% endif %}
+			{# CC licence probably?#}
+			<p>Free full text access - supporting open research</p>
                         <div class="links">
-                            <a href="{{ item.path }}/index.html">Metadata Page</a>
-                            <a href="{{ item.path }}/paper.pdf">Download PDF</a>
+                            <a href="{{ item.metadata.permalink }}.html">Metadata Page</a>
+                            <a href="{{ item.metadata.permalink }}.pdf">Download PDF</a>
                         </div>
                     </article>
                 {% endfor %}

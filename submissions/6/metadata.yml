@@ -7,7 +7,7 @@ authors:
     affiliation: "Amateur Research Association"
 
 abstract: >
-    A description of the production process for the ARA journal, highlighting theopen-source tools used, including LaTeX, GitHub Actions, and towncrier.
+    A description of the production process for the ARA Transaction release, highlighting the open-source tools used, including LaTeX, GitHub Actions, and towncrier.
 keywords:
   - "colophon"
   - "publishing"
