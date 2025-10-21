@@ -1,0 +1,289 @@
+%% The Amateur Research Association: A Framework for Decentralized Scholarly Publishing
+%% Prepared for submission to the Amateur Research Association (ARA)
+
+\documentclass[conference, compsoc, 11pt]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{graphicx} % Required for table sizing
+
+% orcid icon (TODO: move to a separate style file)
+\usepackage{scalerel}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\tikzset{
+  orcidlogo/.pic={
+    \fill[orcidlogocol] svg{M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z};
+    \fill[white] svg{M86.3,186.2H70.9V79.1h15.4v48.4V186.2z}
+                 svg{M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z}
+                 svg{M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z};
+  }
+}
+
+\newcommand\orcidicon[1]{\href{https://orcid.org/#1}{\mbox{\scalerel*{
+\begin{tikzpicture}[yscale=-1,transform shape]
+\pic{orcidlogo};
+\end{tikzpicture}
+}{|}}}}
+
+\usepackage{hyperref} %<--- Load after everything else
+
+% --- METADATA ---
+% --- Document Metadata ---
+\title{The Amateur Research Association (ARA): A Framework for Decentralized Scholarly Publishing}
+\author{
+    \IEEEauthorblockN{Ivan Anishchuk}
+    \IEEEauthorblockA{
+        Editor-in-Chief, Amateur Research Association\\
+        ORCID \orcidicon{0000-0000-0000-0000}: 0000-0000-0000-0000 % Placeholder
+    }
+}
+
+\author{
+    \IEEEauthorblockN{The ARA Founding Committee}
+    \IEEEauthorblockA{
+        contact@ara.pub \\
+        https://ara.pub
+    }
+}
+
+% ====================================================================
+% DOCUMENT BEGINS
+% ====================================================================
+\begin{document}
+
+% FIXME: provide correct publication info when available
+\IEEEoverridecommandlockouts
+\IEEEpubid{\makebox[\columnwidth]{2025.1.ara.todo.pub/3~CC0 2025 The ARA Founding Committee \hfill}
+\hspace{\columnsep}\makebox[\columnwidth]{ }}
+
+\maketitle
+
+\IEEEpubidadjcol
+
+% --- ABSTRACT ---
+\begin{abstract}
+The established paradigms of scholarly communication present significant barriers to entry for a growing global community of independent researchers and citizen scientists. This whitepaper introduces the Amateur Research Association (ARA), a novel framework designed to address this gap by creating a professionally managed, open-source, and low-cost publishing platform. We propose a four-tiered strategic roadmap that begins with a minimal viable product focused on core automation and scales to a sustainable institution that actively fosters the careers of its members. The ARA’s methodology is rooted in a Git-native workflow that leverages GitHub Actions, LaTeX, and a curated release model to ensure transparency, reproducibility, and quality. Key innovations include the integration of essential scholarly infrastructure (e.g., Crossref DOIs, ORCID profiles), the creation of a fellowship program to provide direct support to researchers, and the implementation of a "Momentum Publishing System." This document details the project's founding team, market opportunity, go-to-market strategy, and competitive positioning, presenting a comprehensive blueprint for the project's implementation and long-term success.
+\end{abstract}
+
+% --- KEYWORDS ---
+\begin{IEEEkeywords}
+scholarly communication, open science, independent research, automated publishing, GitHub Actions, Digital Object Identifier (DOI), tokenomics, decentralized science (DeSci)
+\end{IEEEkeywords}
+
+% ====================================================================
+% SECTIONS
+% ====================================================================
+
+\section{Introduction}
+
+The creation and dissemination of knowledge have fundamentally decentralized in the 21st century. Beyond the confines of traditional academic institutions, a diverse and growing community of independent researchers, citizen scientists, industry professionals, and lifelong learners actively contributes to the global body of research. However, the infrastructure for formal scholarly communication has not evolved in parallel with this trend. The current landscape is largely a dichotomy between the legacy, high-barrier formal journal system and the fast, informal preprint server.
+
+Formal journals, while the arbiters of legitimacy, present significant obstacles for those without institutional affiliations. These include prohibitive article processing charges (APCs), opaque and lengthy peer-review cycles, and complex submission systems \cite{eve2017}. Conversely, free preprint servers like arXiv.org, while indispensable for rapid dissemination, lack the formal markers of professional publication—such as standardized typesetting, persistent Digital Object Identifiers (DOIs), curated releases, and a clear editorial framework—that ensure long-term citability, discovery, and institutional legitimacy \cite{ginsparg2011}. This leaves independent researchers in a precarious position, where their work is often rendered invisible, unarchived, or disconnected from the broader scholarly conversation.
+
+The Amateur Research Association (ARA) is a project conceived to resolve this tension. It is a comprehensive framework for a publishing platform that is as legitimate as a formal journal but as accessible as a preprint server. This whitepaper outlines the ARA’s strategic roadmap, technical architecture, governance model, and the innovative economic system designed to ensure its long-term sustainability and community health.
+
+\section{The Founding Vision and Team}
+
+The Amateur Research Association (ARA) was conceived and is led by Ivan Anishchuk, an independent researcher and developer with over 15 years of experience in software engineering and a deep focus on the intersection of Zero-Knowledge Cryptography and Machine Learning (ZK-ML). The project's architecture directly reflects this background, prioritizing robust, automated, and cryptographically secure principles. Anishchuk's experience, spanning senior roles in software development and research positions at organizations like Inference Labs and the Neural Internet DAO, provides the unique blend of technical expertise and scholarly insight required to execute this vision \cite{anishchuk2025}.
+
+The initial development and conceptualization of the ARA's core technology are being undertaken as a capstone project within the Invisible Garden, a research and building community dedicated to advancing the frontiers of ZK cryptography and decentralized systems. This environment provides the ideal incubator for the project, offering both a peer group for technical feedback and an initial cohort of potential contributors.
+
+The ARA is not merely a theoretical construct; it is an active project with a clear and immediate roadmap. A minimal viable product (MVP), corresponding to Tier 1 of this plan, is currently being developed as a submission for an upcoming EthGlobal hackathon. The goal is to leverage this event to build and showcase the core automated publishing workflow. Following the hackathon, the project will be further developed and refined within the Invisible Garden community, with the strategic objective of onboarding the first prospective authors and publishing their initial works by the time of DevConnect. This approach embodies the project's core ethos: starting simple, building sustainably, and proving the model's value through concrete, near-term execution. While the vision for the ARA is ambitious, its growth is predicated on achieving tangible milestones and securing modest, pre-seed level funding to catalyze the transition from a hackathon project into a self-sustaining platform.
+
+\section{Market Opportunity and the Rise of the Independent Researcher}
+
+The ARA is positioned to serve a substantial and growing unserved niche within the scholarly landscape. The "independent researcher" is not a monolithic identity but a diverse group that includes:
+\begin{itemize}
+    \item \textbf{Industry Professionals:} Data scientists, engineers, and market researchers who produce valuable, high-quality work that does not fit the corporate blog or traditional journal mold.
+    \item \textbf{Graduate Students and Postdocs:} Individuals exploring side projects or interdisciplinary work that falls outside their primary lab's focus.
+    \item \textbf{Citizen Scientists:} Organized groups and motivated individuals contributing to fields like astronomy, ecology, and public health.
+    \item \textbf{Retired Academics and Lifelong Learners:} Experts who are no longer affiliated with an institution but continue to produce valuable research and analysis.
+\end{itemize}
+
+Several market trends converge to make this the ideal moment for the ARA's launch. The growth of the "creator economy" has normalized the idea of individuals building a reputation outside of large institutions. The open science movement is actively pushing for more transparent and accessible models of research dissemination. Finally, there is a growing public and academic dissatisfaction with the high costs and slow pace of the legacy publishing industry \cite{eve2017}. The total addressable market is difficult to quantify precisely, but with millions of individuals engaged in postgraduate education and technical professions globally, capturing even a fraction of one percent represents a significant and self-sustaining community.
+
+\section{The ARA Strategic Roadmap}
+
+The ARA is designed for phased implementation, allowing the project to scale its services in lockstep with community growth and funding. This is structured as a four-tiered roadmap.
+
+\subsection{Tier 1: The Minimal Viable Product (MVP)}
+The initial tier focuses exclusively on the core automated publishing workflow. It is designed to be launched at a minimal cost (under \$50 annually), sustainable by its founding members. It establishes the foundational Git-native workflow, a public website on GitHub Pages, and a free community platform.
+
+\subsection{Tier 2: The Extended Service (Professional Platform)}
+This tier requires initial grant funding or a sustainable member base to integrate the essential services that connect the ARA to the global scholarly ecosystem. This includes becoming a member of Crossref to assign official DOIs to all publications \cite{lammey2014} and a member of ORCID to enable automated updates to author profiles, linking their work to a persistent scholarly identity \cite{haak2012}.
+
+\subsection{Tier 3: The Ultra Initiative (Fellowship Accelerator)}
+Tier 3 evolves the ARA from a platform into a career accelerator. It establishes a fellowship program that provides direct, high-value perks to a cohort of researchers. These include verifiable credentials via a digital badging platform \cite{credly2025}, sponsored access to professional digital libraries such as the ACM Digital Library \cite{acm2025}, and an AI-powered editorial toolkit to improve manuscript quality.
+
+\subsection{Tier 4: The Moon Initiative (Community Hub \& Professional Journal)}
+The final tier represents the project's maturation into a professionally managed, self-sustaining institution. This requires a significant budget (\$25,000-\$50,000 annually) to hire a Part-Time Managing Editor, provide professional copyediting for all publications, establish a prestigious Advisory Board, join key ethical bodies like the Committee on Publication Ethics \cite{cope2025}, and host community-building events such as remote research hackathons. This tier also includes formalizing the organization's structure by registering as a 501(c)(3) non-profit.
+
+\section{Technical Architecture and Methodology}
+
+The ARA is founded on the principle of "infrastructure as code." The entire publishing process is transparent, reproducible, and highly automated.
+
+\subsection{The Git-Native Workflow}
+The core of the ARA is a workflow that leverages the native features of GitHub:
+\begin{enumerate}
+    \item \textbf{Issue Assignment:} Every submission is initiated as a GitHub Issue, assigning it a permanent internal identifier.
+    \item \textbf{Submission via Pull Request:} Authors submit their work by opening a Pull Request from a standardized LaTeX template.
+    \item \textbf{Automated Validation:} A GitHub Action is automatically triggered to validate the submission's metadata and compile the source code.
+    \item \textbf{Editorial Review and Acceptance:} An editorial board reviews the submission. Merging the pull request signifies acceptance and triggers the publication process.
+\end{enumerate}
+
+\subsection{Automated Publication and Curation}
+Upon acceptance, a series of automated actions occur: a standalone PDF is generated, a permanent landing page is created, and metadata is deposited with Crossref. Periodically, the editorial team curates a formal release. A tool, `towncrier` \cite{krekel2022}, is used to collect all new publications and automatically assemble them into a master `release.tex` file, which is then compiled into a cohesive PDF volume and archived as a formal GitHub Release.
+
+\section{The Momentum Publishing System: A Tokenomic Approach}
+
+To manage submissions and incentivize consistent contribution, the ARA will implement an innovative "Momentum Publishing System." This framework uses a dual-token economy to create a balanced, self-regulating process.
+
+\subsection{The Dual-Token Economy}
+The system is built upon two distinct, non-fungible tokens (NFTs) that represent a member's "right to publish" \cite{entriken2018, wang2021}.
+\begin{itemize}
+    \item \textbf{The Genesis Token:} A perpetual, non-expiring voucher granting one publication slot, acquired for a symbolic one-time fee.
+    \item \textbf{The Momentum Token:} A time-limited token \textit{earned} for free upon a successful publication, creating a "use-it-or-lose-it" dynamic that promotes sustained engagement.
+\end{itemize}
+
+\subsection{The Token Lifecycle}
+The interplay between the two tokens creates a self-perpetuating cycle for active researchers.
+
+\begin{figure}[!t]
+\centering
+\framebox{\parbox{0.8\columnwidth}{\centering
+  \vspace{1cm}
+  \textbf{Image Placeholder} \\
+  \small\textit{A flowchart of the token lifecycle, from Genesis to Momentum token.}
+  \vspace{1cm}
+}}
+\caption{The ARA Momentum Publishing System Token Lifecycle.}
+\label{fig_token_lifecycle}
+\end{figure}
+
+\begin{enumerate}
+    \item A member \textbf{purchases} a Genesis Token.
+    \item The member \textbf{redeems} the token to claim a submission slot.
+    \item Upon successful publication, the Genesis Token is \textbf{burned}.
+    \item A new, time-limited Momentum Token is \textbf{issued} to the author for free.
+    \item If the author publishes again before the Momentum Token expires, the cycle \textbf{repeats}. If it expires, the author must acquire a new Genesis Token.
+\end{enumerate}
+
+This system gamifies the publishing process \cite{deterding2011}, fairly allocates editorial resources, and creates a sustainable cost-recovery mechanism, aligning the incentives of individual researchers with the long-term goals of the organization in a manner consistent with the principles of decentralized science \cite{hamburg2021}.
+
+\section{Competitive Landscape and Unique Value Proposition}
+
+The ARA is not entering a vacuum. However, it is uniquely positioned to fill a gap that existing platforms do not address. The competitive landscape can be analyzed across two key axes: Accessibility (ease and cost of publishing) and Legitimacy (scholarly rigor and professional presentation).
+
+\begin{table}[!t]
+\caption{Competitive Landscape Analysis}
+\label{table_competitive}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Platform Type} & \textbf{Accessibility} & \textbf{Legitimacy} & \textbf{Key Weakness for Independents} \\
+\hline
+Traditional Journals & Very Low & Very High & High cost, slow, requires affiliation. \\
+Preprint Servers (arXiv) & Very High & Moderate & No curation, no professional typesetting. \\
+Personal Blogs & Very High & Very Low & No scholarly infrastructure (DOIs, etc.). \\
+\textbf{ARA} & \textbf{High} & \textbf{High} & \textbf{Sits in the ideal middle ground.} \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+The ARA’s unique value proposition is its synthesis of the best attributes from each quadrant. It offers the speed and accessibility of a preprint server, the formal identifiers and professional presentation of a traditional journal, and a community focus that personal blogs cannot replicate.
+
+\section{Go-to-Market and Community Building Strategy}
+
+The ARA will be launched and grown through a phased, community-first strategy.
+\begin{itemize}
+    \item \textbf{Phase 1: Initial Launch (The First 100 Members):} Growth will be driven by leveraging the founder's existing networks within the EthGlobal and Invisible Garden communities. We will engage in targeted outreach in online forums dedicated to specific research niches.
+    \item \textbf{Phase 2: Scaling (The First 1,000 Members):} Growth will be catalyzed by the formal launch of the Institutional Membership program and the establishment of the ARA Fellowship Program, which will be promoted to potential sponsors.
+\end{itemize}
+
+\section{Project Roadmap and Milestones}
+This roadmap translates the strategic tiers into a concrete timeline.
+\begin{itemize}
+    \item \textbf{Q4 2025 (EthGlobal \& DevConnect):}
+    \begin{itemize}
+        \item Develop and launch the Tier 1 MVP.
+        \item Onboard the first 5-10 authors.
+        \item Publish the inaugural "proof-of-concept" release.
+    \end{itemize}
+    \item \textbf{H1 2026 (Securing the Foundation):}
+    \begin{itemize}
+        \item Secure initial pre-seed/grant funding (\$5k - \$10k).
+        \item Begin integration of Crossref and ORCID (Tier 2).
+        \item Formalize the Advisory Board.
+    \end{itemize}
+    \item \textbf{H2 2026 (Scaling and Growth):}
+    \begin{itemize}
+        \item Launch the Institutional Membership program.
+        \item Develop and launch the Tier 3 "Ultra" fellowship.
+    \end{itemize}
+    \item \textbf{2027 and Beyond (Sustainability):}
+    \begin{itemize}
+        \item Achieve a self-sustaining financial model.
+        \item Begin the process of registering as a 501(c)(3) non-profit.
+        \item Host the first ARA Research Hackathon.
+    \end{itemize}
+\end{itemize}
+
+\section{Governance and Sustainability}
+
+The ARA will initially be governed by its founder, Ivan Anishchuk, with strategic guidance from mentors and peers within the Invisible Garden and EthGlobal communities. The immediate goal is to establish a lightweight, transparent operational model. As the project matures and secures funding to enter Tier 2 and beyond, a formal Advisory Board will be established, and a more distributed governance structure will be implemented. This phased approach to governance ensures that the project can remain agile in its early stages while building towards a resilient, community-led structure for the long term. The project will be funded through a combination of initial grant funding, low-cost individual and institutional memberships, fellowship sponsorships, and public donations.
+
+\section{Conclusion}
+
+The Amateur Research Association project presents a comprehensive, phased, and robust solution to a persistent challenge in scholarly communication. By synthesizing professional standards with open-source automation, the ARA provides a platform that is both legitimate and accessible. The tiered strategic plan ensures a viable path from a minimal, low-cost launch to a fully-featured, professionally managed, and self-sustaining ecosystem. Through innovative mechanisms like the Momentum Publishing System and a focus on building a supportive community, the ARA has the potential to empower a global network of independent scholars, ensuring their work is preserved, recognized, and integrated into the permanent scholarly record.
+
+% ====================================================================
+% REFERENCES
+% ====================================================================
+\begin{thebibliography}{99}
+
+\bibitem{anishchuk2025}
+I. Anishchuk, "Academic CV," Independent, 2025.
+
+\bibitem{acm2025}
+Association for Computing Machinery, "Join ACM," ACM, 2025. [Online]. Available: \url{https://www.acm.org/membership/join}
+
+\bibitem{cope2025}
+Committee on Publication Ethics, "Membership," COPE, 2025. [Online]. Available: \url{https://publicationethics.org/membership}
+
+\bibitem{credly2025}
+Credly, "What is a Digital Badge?," Acclaim, 2025. [Online]. Available: \url{https://info.credly.com/what-is-a-digital-badge}
+
+\bibitem{deterding2011}
+S. Deterding, D. Dixon, R. Khaled, and L. Nacke, "From game design elements to gamefulness: Defining 'gamification'," in \textit{Proceedings of the 15th International Academic MindTrek Conference}, 2011, pp. 9-15.
+
+\bibitem{entriken2018}
+W. Entriken, D. Shirley, J. Evans, and N. Sachs, "EIP-721: Non-fungible token standard," \textit{Ethereum Improvement Proposals}, no. 721, 2018. [Online]. Available: \url{https://eips.ethereum.org/EIPS/eip-721}
+
+\bibitem{eve2017}
+M. P. Eve and E. Priego, "The realities of open access monograph publishing," \textit{The Journal of Electronic Publishing}, vol. 20, no. 1, 2017.
+
+\bibitem{ginsparg2011}
+P. Ginsparg, "ArXiv at 20," \textit{Nature}, vol. 476, no. 7359, pp. 145-147, 2011.
+
+\bibitem{haak2012}
+L. L. Haak, M. Fenner, L. Paglione, E. Pentz, and H. Ratner, "ORCID: A system to uniquely identify researchers," \textit{Learned Publishing}, vol. 25, no. 4, pp. 259-264, 2012.
+
+\bibitem{hamburg2021}
+S. Hamburg, "A guide to decentralized science (DeSci)," The Foresight Institute, 2021. [Online]. Available: \url{https://foresight.org/a-guide-to-decentralized-science-desci/}
+
+\bibitem{krekel2022}
+H. Krekel et al., "Towncrier (Version 22.12.0)" [Computer software], GitHub, 2022. [Online]. Available: \url{https://github.com/twisted/towncrier}
+
+\bibitem{lammey2014}
+R. Lammey, "Crossref: The citation linking backbone," \textit{Information Services \& Use}, vol. 34, no. 3-4, pp. 319-322, 2014.
+
+\bibitem{wang2021}
+Q. Wang, R. Li, Q. Wang, and S. Chen, "Non-fungible token (NFT): Overview, evaluation, opportunities and challenges," \textit{arXiv preprint arXiv:2105.07447}, 2021.
+
+\end{thebibliography}
+
+\end{document}

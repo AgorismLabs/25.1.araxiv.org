@@ -1,0 +1,23 @@
+
+#--- Release Metadata ---
+
+release_volume: "25.1"
+release_title: "Inaugural Release - Autumn 2025"
+publication_date: "October 21, 2025"
+
+#--- Content Ordering 
+#--- List the GitHub Issue IDs of all content to be included in this releasein the exact order you want them to appear in the Table of Contentsand the final compiled PDF volume.
+
+content_ids:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  # Masthead2 
+  # # Editorial1 
+  # # The ARA Whitepaper5 
+  # # Errata4 
+  # # Call for Papers6 
+  # # Colophon

@@ -1,0 +1,1 @@
+Dependencies for the build scriptPyYAML==6.0.1Jinja2==3.1.2

@@ -1,0 +1,25 @@
+#--- Metadata for the Colophon of Volume 2025.1
+#--- Section 1: Editorial Team to complete
+title: "Colophon: Volume 25.1"
+authors:
+  - name: "The ARA Founding Committee"
+    orcid: "0000-0000-0000-0000"
+    affiliation: "Amateur Research Association"
+
+abstract: >
+    A description of the production process for the ARA journal, highlighting theopen-source tools used, including LaTeX, GitHub Actions, and towncrier.
+keywords:
+  - "colophon"
+  - "publishing"
+  - "open source"
+  - "automation"
+
+#--- Section 2: System-managed
+issue_id: 6
+type: colophon
+doi: ""
+permalink: "25.1.6"
+publication_date: ""
+part_of:
+    release_volume: "2025.1"
+    release_issue_id: 6

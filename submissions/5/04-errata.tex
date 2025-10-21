@@ -1,0 +1,60 @@
+% --- Errata: Volume 2025.1 ---
+% --- Colophon: Volume 2025.1 ---
+\documentclass[conference, compsoc, 11pt]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{graphicx} % Required for table sizing
+
+
+% orcid icon (TODO: move to a separate style file)
+\usepackage{scalerel}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\tikzset{
+  orcidlogo/.pic={
+    \fill[orcidlogocol] svg{M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z};
+    \fill[white] svg{M86.3,186.2H70.9V79.1h15.4v48.4V186.2z}
+                 svg{M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z}
+                 svg{M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z};
+  }
+}
+
+\newcommand\orcidicon[1]{\href{https://orcid.org/#1}{\mbox{\scalerel*{
+\begin{tikzpicture}[yscale=-1,transform shape]
+\pic{orcidlogo};
+\end{tikzpicture}
+}{|}}}}
+
+\usepackage{hyperref} %<--- Load after everything else
+
+% --- METADATA ---
+\title{Errata: Volume 2025.1}
+
+\author{
+    \IEEEauthorblockN{Ivan Anishchuk}
+    \IEEEauthorblockA{
+        Editor-in-Chief, Amateur Research Association\\
+        ORCID \orcidicon{0000-0000-0000-0000}: 0000-0000-0000-0000 % Placeholder
+    }
+}
+
+\begin{document}
+
+% FIXME: provide correct publication info when available
+\IEEEoverridecommandlockouts
+\IEEEpubid{\makebox[\columnwidth]{2025.1.ara.todo.pub/4~CC0 2025 Ivan Anishchuk \hfill}
+\hspace{\columnsep}\makebox[\columnwidth]{ }}
+
+\maketitle
+
+\IEEEpubidadjcol
+
+\section*{Errata}
+
+As this is the inaugural issue of the Amateur Research Association, no errata have been issued for previous publications.
+
+Any corrections or updates to papers published in this or future issues will be formally listed in this section in subsequent releases.
+
+\end{document}

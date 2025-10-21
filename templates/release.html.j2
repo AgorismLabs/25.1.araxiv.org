@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARA Release: {{ release.release_title }}</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <header class="container">
+        <h1>Amateur Research Association - Transactions</h1>
+        <h2>{{ release.release_title }}</h2>
+        <p class="release-date">Published: {{ release.publication_date }}</p>
+        <div class="main-downloads">
+		{#<a href="ARA-Volume-{{ release.release_volume }}.pdf" class="button">Download Full Volume PDF</a>#}
+        </div>
+    </header>
+
+    <main class="container">
+        <h3>Table of Contents</h3>
+        {% for item in content_list %}
+            <article class="paper">
+                <h4>{{ item.metadata.title }}</h4>
+                <p class="author">
+                    {% for author in item.metadata.authors %}
+                        {{ author.name }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                {% if item.metadata.abstract %}
+                <p class="abstract">{{ item.metadata.abstract }}</p>
+                {% endif %}
+                <div class="links">
+		    <a href="{{ item.metadata.permalink }}.pdf">Download PDF (ARA {{ item.metadata.permalink }} full text access)</a>
+		    <a href="{{ item.metadata.permalink }}.html">Metadata page (ARA {{ item.metadata.permalink }})</a>
+                </div>
+            </article>
+        {% endfor %}
+    </main>
+
+    <footer>
+        <p>CC0 {{ release.publication_date.split(' ')[-1] }} Amateur Research Association (index). All contributions belong to their authors and licensed separately, read footnotes.</p>
+    </footer>
+
+</body>
+</html>

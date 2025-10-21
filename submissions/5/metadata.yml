@@ -1,0 +1,24 @@
+#--- Metadata for the Errata section of Volume 2025.1
+#--- Section 1: Editorial Team to complete
+title: "Errata: Volume 25.1"
+authors:
+  - name: "The ARA Editorial Board"
+    orcid: "0000-0000-0000-0000"
+    affiliation: "Amateur Research Association"
+
+abstract: >
+    Errata for Volume 25.1. No corrections are noted for this inaugural issue.
+keywords:
+    - "errata"
+    - "corrections"
+
+#--- Section 2: System-managed
+
+issue_id: 5
+type: errata
+doi: ""
+permalink: "25.1.5"
+publication_date: ""
+part_of:
+  release_volume: "2025.1"
+  release_issue_id: 5
