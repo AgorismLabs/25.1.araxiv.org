@@ -4,43 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARA Release: {{ release.release_title }}</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* --- Basic Reset & Typography --- */
+        :root {
+            --primary-color: #0d47a1; /* A deep, professional blue */
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: var(--text-color);
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 0 2em;
+        }
+
+        /* --- Header --- */
+        .header {
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5em;
+            margin-bottom: 2.5em;
+        }
+        .header h1 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 1.2em;
+            color: #666;
+            margin: 0;
+        }
+        .header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5em;
+            margin: 0.2em 0;
+            line-height: 1.2;
+            color: #000;
+        }
+        .header .release-date {
+            font-style: italic;
+            color: #555;
+            margin-top: 0.5em;
+        }
+        .header .download-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.8em 1.5em;
+            margin-top: 1.5em;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .header .download-button:hover {
+            background-color: #0b3a82;
+        }
+
+        /* --- Main Content Sections --- */
+        .section {
+            margin-bottom: 2.5em;
+        }
+        .section h3 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+            color: var(--primary-color);
+        }
+        .about-box {
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            padding: 0.1em 1.5em;
+        }
+
+        /* --- Table of Contents Article List --- */
+        .toc-article {
+            margin-bottom: 2em;
+            padding-bottom: 2em;
+            border-bottom: 1px solid #eee;
+        }
+        .toc-article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .toc-article h4 {
+            font-size: 1.4em;
+            margin: 0 0 0.2em 0;
+        }
+        .toc-article .authors {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        .toc-article .abstract {
+            font-size: 0.95em;
+            color: #444;
+        }
+        .toc-article .links {
+            margin-top: 1em;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 0.9em;
+        }
+        .toc-article .links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 1.5em;
+        }
+        .toc-article .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            margin-top: 4em;
+            padding-top: 1.5em;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        /* --- Responsive Layout --- */
+        @media (max-width: 600px) {
+            .container {
+                margin: 1em auto;
+                padding: 0 1em;
+            }
+            .header h2 {
+                font-size: 2em;
+            }
+        }
+        
+        /* --- Classy Print Styles --- */
+        @media print {
+            body {
+                font-family: 'Times New Roman', serif;
+                color: #000;
+            }
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .header .download-button, .footer {
+                display: none;
+            }
+            .header, .section {
+                border: none;
+                page-break-inside: avoid;
+            }
+            h1, h2, h3, h4 {
+                color: #000 !important;
+            }
+            .about-box {
+                background: #eee;
+                border: 1px solid #ccc;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header class="container">
-        <h1>Amateur Research Association - Transactions</h1>
-        <h2>{{ release.release_title }}</h2>
-        <p class="release-date">Published: {{ release.publication_date }}</p>
-        <div class="main-downloads">
-		{#<a href="ARA-Volume-{{ release.release_volume }}.pdf" class="button">Download Full Volume PDF</a>#}
-        </div>
-    </header>
+    <div class="container">
+        
+        <header class="header">
+            <h1>Amateur Research Association</h1>
+            <h2>{{ release.release_title }}</h2>
+            <p class="release-date">Published: {{ release.publication_date }}</p>
+            <a href="{{ release.release_volume }}.pdf" class="download-button">Download Full Volume PDF</a>
+        </header>
 
-    <main class="container">
-        <h3>Table of Contents</h3>
-        {% for item in content_list %}
-            <article class="paper">
-                <h4>{{ item.metadata.title }}</h4>
-                <p class="author">
-                    {% for author in item.metadata.authors %}
-                        {{ author.name }}{% if not loop.last %}, {% endif %}
-                    {% endfor %}
+        <main>
+            <section class="section about-box">
+                <h3>About this Project</h3>
+                <p>
+                    The Amateur Research Association (ARA) is an experimental publishing platform designed for independent researchers, citizen scientists, and industry professionals. Our mission is to provide a venue for high-quality, unaffiliated research that combines the legitimacy of a formal journal with the accessibility of a preprint server.
                 </p>
-                {% if item.metadata.abstract %}
-                <p class="abstract">{{ item.metadata.abstract }}</p>
-                {% endif %}
-                <div class="links">
-		    <a href="{{ item.metadata.permalink }}.pdf">Download PDF (ARA {{ item.metadata.permalink }} full text access)</a>
-		    <a href="{{ item.metadata.permalink }}.html">Metadata page (ARA {{ item.metadata.permalink }})</a>
-                </div>
-            </article>
-        {% endfor %}
-    </main>
+                <p>
+                    This release was produced using an automated, open-source workflow. All submissions are typeset in LaTeX, managed via GitHub, and compiled into a cohesive volume. For more information, please see our foundational whitepaper included in this issue.
+                </p>
+            </section>
 
-    <footer>
-        <p>CC0 {{ release.publication_date.split(' ')[-1] }} Amateur Research Association (index). All contributions belong to their authors and licensed separately, read footnotes.</p>
-    </footer>
+            <section class="section">
+                <h3>Table of Contents</h3>
+
+                {% for item in content_list %}
+                    <article class="toc-article">
+                        <h4>{{ item.metadata.title }}</h4>
+                        <p class="authors">
+                            {% for author in item.metadata.authors %}
+                                {{ author.name }}{% if not loop.last %}; {% endif %}
+                            {% endfor %}
+                        </p>
+                        {% if item.metadata.abstract %}
+                        <p class="abstract">{{ item.metadata.abstract }}</p>
+                        {% endif %}
+                        <div class="links">
+                            <a href="{{ item.path }}/index.html">Metadata Page</a>
+                            <a href="{{ item.path }}/paper.pdf">Download PDF</a>
+                        </div>
+                    </article>
+                {% endfor %}
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>
+                Published by the Amateur Research Association. Contributions are licensed individually by their respective authors.
+            </p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
+
