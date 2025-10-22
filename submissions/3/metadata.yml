@@ -9,10 +9,10 @@ title: "The Amateur Research Association: A Framework for Decentralized Scholarl
 #--- List of all authors. ORCID is required for Crossref.
 
 authors:
-  - name: "The ARA Founding Committee"
+  - name: "Ivan Anishchuk"
+    orcid: "0009-0008-8729-6137"
     #--- An ORCID will need to be created for the organization or lead founder.
-    orcid: "0000-0000-0000-0000"
-    affiliation: "Independent"
+    affiliation: "The ARA Founding Committee"
 
 #--- The abstract of the work.
 
@@ -45,7 +45,7 @@ doi: ""
 #--- The permalink will be constructed during the release process.
 permalink: "25.1.3"
 #--- The date the PR was merged and the work was published.
-publication_date: ""
+publication_date: "2025-10-23"
 #--- If part of a collected release, links to the release.
 part_of:
   release_volume: "25.1"

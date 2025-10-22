@@ -2,9 +2,9 @@
 #--- Section 1: Editorial Team to complete
 title: "Errata: Volume 25.1"
 authors:
-  - name: "The ARA Editorial Board"
-    orcid: "0000-0000-0000-0000"
-    affiliation: "Amateur Research Association"
+  - name: "Ivan Anishchuk"
+    orcid: "0009-0008-8729-6137"
+    affiliation: "The ARA Editorial Board"
 
 abstract: >
     Errata for Volume 25.1. No corrections are noted for this inaugural issue.
@@ -18,7 +18,7 @@ issue_id: 5
 type: errata
 doi: ""
 permalink: "25.1.5"
-publication_date: ""
+publication_date: "2025-10-23"
 part_of:
   release_volume: "2025.1"
   release_issue_id: 5

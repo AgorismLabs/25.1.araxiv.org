@@ -94,6 +94,7 @@ def main():
         )
         with open(os.path.join(OUTPUT_DIR, f"{item['metadata']['permalink']}.html"), 'w') as f:
             f.write(web_html_content)
+        print("Done.\n")
 
     # 5. Build Master PDF Volume
     # Not honestly sure about this. Probably skip for now.

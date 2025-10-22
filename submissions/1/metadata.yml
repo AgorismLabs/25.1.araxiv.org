@@ -4,8 +4,8 @@
 title: "Masthead: Volume 25.1"
 authors:
   - name: "Ivan Anishchuk"
-    orcid: "0000-0000-0000-0000"
-    affiliation: "The ARA Founding Committee, Editorial Board"
+    orcid: "0009-0008-8729-6137"
+    affiliation: "Editorial Board"
 
 abstract: >
     Lists the editorial board, advisory board, and maintainers for the inaugural release (Volume 25.1) of the Amateur Research Association Transactions.
@@ -19,7 +19,7 @@ issue_id: 1
 type: masthead
 doi: ""
 permalink: "25.1.1"  # or use a separate field for internal id?
-publication_date: ""
+publication_date: "2025-10-23"
 part_of:
   release_volume: "25.1"
   release_issue_id: "1"  # not sure how relates to issue_id

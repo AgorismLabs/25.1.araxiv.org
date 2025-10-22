@@ -4,7 +4,7 @@
 title: "Editorial: Launching the Amateur Research Association"
 authors:
   - name: "Ivan Anishchuk"
-    orcid: "0000-0000-0000-0000" # Placeholder ORCID
+    orcid: "0009-0008-8729-6137"
     affiliation: "Serving as Managing Editor-in-Chief"
 
 abstract: >
@@ -21,7 +21,7 @@ issue_id: 2 # Assuming the Whitepaper is #1
 type: editorial
 doi: ""
 permalink: "25.1.2"
-publication_date: ""
+publication_date: "2025-10-23"
 part_of:
   release_volume: "2025.1"
   release_issue_id: 2 # Placeholder for the release issue
