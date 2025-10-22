@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARA Release: Inaugural Release - Autumn 2025 - volume 25.1 </title>
+    <style>
+        /* --- Basic Reset & Typography --- */
+        :root {
+            --primary-color: #0d47a1; /* A deep, professional blue */
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: var(--text-color);
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 0 2em;
+        }
+
+        /* --- Header --- */
+        .header {
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5em;
+            margin-bottom: 2.5em;
+        }
+        .header h1 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 1.2em;
+            color: #666;
+            margin: 0;
+        }
+        .header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5em;
+            margin: 0.2em 0;
+            line-height: 1.2;
+            color: #000;
+        }
+        .header .release-date {
+            font-style: italic;
+            color: #555;
+            margin-top: 0.5em;
+        }
+        .header .download-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.8em 1.5em;
+            margin-top: 1.5em;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .header .download-button:hover {
+            background-color: #0b3a82;
+        }
+
+        /* --- Main Content Sections --- */
+        .section {
+            margin-bottom: 2.5em;
+        }
+        .section h3 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+            color: var(--primary-color);
+        }
+        .about-box {
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            padding: 0.1em 1.5em;
+        }
+
+        /* --- Table of Contents Article List --- */
+        .toc-article {
+            margin-bottom: 2em;
+            padding-bottom: 2em;
+            border-bottom: 1px solid #eee;
+        }
+        .toc-article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .toc-article h4 {
+            font-size: 1.4em;
+            margin: 0 0 0.2em 0;
+        }
+        .toc-article .authors {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        .toc-article .abstract {
+            font-size: 0.95em;
+            color: #444;
+        }
+        .toc-article .links {
+            margin-top: 1em;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 0.9em;
+        }
+        .toc-article .links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 1.5em;
+        }
+        .toc-article .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            margin-top: 4em;
+            padding-top: 1.5em;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        /* --- Responsive Layout --- */
+        @media (max-width: 600px) {
+            .container {
+                margin: 1em auto;
+                padding: 0 1em;
+            }
+            .header h2 {
+                font-size: 2em;
+            }
+        }
+        
+        /* --- Classy Print Styles --- */
+        @media print {
+            body {
+                font-family: 'Times New Roman', serif;
+                color: #000;
+            }
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .header .download-button, .footer {
+                display: none;
+            }
+            .header, .section {
+                border: none;
+                page-break-inside: avoid;
+            }
+            h1, h2, h3, h4 {
+                color: #000 !important;
+            }
+            .about-box {
+                background: #eee;
+                border: 1px solid #ccc;
+            }
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="header">
+            <h1>Amateur Research Association</h1>
+	    <h2>Inaugural Release - Autumn 2025 - volume 25.1</h2>
+            <p class="release-date">Published: October 21, 2025</p>
+            <a href="25.1.pdf" class="download-button">[under construction]Download Full Volume PDF</a>
+        </header>
+
+        <main>
+            <section class="section about-box">
+                <h3>About this Project</h3>
+                <p>
+                    The Amateur Research Association (ARA) is an experimental publishing platform designed for independent researchers, citizen scientists, and industry professionals. Our mission is to provide a venue for high-quality, unaffiliated research that combines (almost, hopefully) the legitimacy of a formal journal with the accessibility of a preprint server.
+                </p>
+                <p>
+                    This release was produced using an automated, open-source workflow. All submissions are typeset in LaTeX, managed via GitHub, and compiled into a cohesive volume. For more information, please see our foundational whitepaper included in this issue.
+                </p>
+            </section>
+
+            <section class="section">
+                <h3>Table of Contents</h3>
+
+                
+                    <article class="toc-article">
+                        <h4>Masthead: Volume 25.1</h4>
+                        <p class="authors">
+                            
+                                Ivan Anishchuk
+                            
+                        </p>
+                        
+                        <p class="abstract">Lists the editorial board, advisory board, and maintainers for the inaugural release (Volume 25.1) of the Amateur Research Association Transactions.
+</p>
+                        
+			
+			<p>Free full text access - supporting open research</p>
+                        <div class="links">
+                            <a href="25.1.1.html">Metadata Page</a>
+                            <a href="25.1.1.pdf">Download PDF</a>
+                        </div>
+                    </article>
+                
+                    <article class="toc-article">
+                        <h4>Editorial: Launching the Amateur Research Association</h4>
+                        <p class="authors">
+                            
+                                Ivan Anishchuk
+                            
+                        </p>
+                        
+                        <p class="abstract">An introduction to the inaugural issue of the Amateur Research Association,outlining the project's mission to provide a professional publishing venuefor independent researchers and presenting the foundational whitepaper.
+</p>
+                        
+			
+			<p>Free full text access - supporting open research</p>
+                        <div class="links">
+                            <a href="25.1.2.html">Metadata Page</a>
+                            <a href="25.1.2.pdf">Download PDF</a>
+                        </div>
+                    </article>
+                
+                    <article class="toc-article">
+                        <h4>The Amateur Research Association: A Framework for Decentralized Scholarly Publishing</h4>
+                        <p class="authors">
+                            
+                                The ARA Founding Committee
+                            
+                        </p>
+                        
+                        <p class="abstract">The established paradigms of scholarly communication present significant barriers to entry for a growing global community of independent researchers and citizen scientists. This whitepaper introduces the Amateur Research Association (ARA), a novel framework designed to address this gap by creating a professionally managed, open-source, and low-cost publishing platform. We propose a four-tiered strategic roadmap that begins with a minimal viable product focused on core automation and scales to a sustainable institution that actively fosters the careers of its members. The ARA’s methodology is rooted in a Git-native workflow that leverages GitHub Actions, LaTeX, and a curated release model to ensure transparency, reproducibility, and quality. Key innovations include the integration of essential scholarly infrastructure (e.g., Crossref DOIs, ORCID profiles), the creation of a fellowship program to provide direct support to researchers, and the implementation of a "Momentum Publishing System." This document details the project's founding team, market opportunity, go-to-market strategy, and competitive positioning, presenting a comprehensive blueprint for the project's implementation and long-term success.
+</p>
+                        
+			
+			<p>Free full text access - supporting open research</p>
+                        <div class="links">
+                            <a href="25.1.3.html">Metadata Page</a>
+                            <a href="25.1.3.pdf">Download PDF</a>
+                        </div>
+                    </article>
+                
+                    <article class="toc-article">
+                        <h4>Call for Papers: Volume 26.1</h4>
+                        <p class="authors">
+                            
+                                The ARA Editorial Board
+                            
+                        </p>
+                        
+                        <p class="abstract">The official call for papers for the next issue of the ARA journal, Volume 2026.1.The submission deadline is December 15, 2025.
+</p>
+                        
+			
+			<p>Free full text access - supporting open research</p>
+                        <div class="links">
+                            <a href="25.1.4.html">Metadata Page</a>
+                            <a href="25.1.4.pdf">Download PDF</a>
+                        </div>
+                    </article>
+                
+                    <article class="toc-article">
+                        <h4>Errata: Volume 25.1</h4>
+                        <p class="authors">
+                            
+                                The ARA Editorial Board
+                            
+                        </p>
+                        
+                        <p class="abstract">Errata for Volume 25.1. No corrections are noted for this inaugural issue.
+</p>
+                        
+			
+			<p>Free full text access - supporting open research</p>
+                        <div class="links">
+                            <a href="25.1.5.html">Metadata Page</a>
+                            <a href="25.1.5.pdf">Download PDF</a>
+                        </div>
+                    </article>
+                
+                    <article class="toc-article">
+                        <h4>Colophon: Volume 25.1</h4>
+                        <p class="authors">
+                            
+                                The ARA Founding Committee
+                            
+                        </p>
+                        
+                        <p class="abstract">A description of the production process for the ARA Transaction release, highlighting the open-source tools used, including LaTeX, GitHub Actions, and towncrier.
+</p>
+                        
+			
+			<p>Free full text access - supporting open research</p>
+                        <div class="links">
+                            <a href="25.1.6.html">Metadata Page</a>
+                            <a href="25.1.6.pdf">Download PDF</a>
+                        </div>
+                    </article>
+                
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>
+                Published by the Amateur Research Association. Contributions are licensed individually by their respective authors.
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

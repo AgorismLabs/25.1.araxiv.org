@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errata: Volume 25.1 - Amateur Research Association</title>
+    <style>
+        /* --- Basic Reset & Typography --- */
+        :root {
+            --primary-color: #0d47a1; /* A deep, professional blue */
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: var(--text-color);
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 0 2em;
+        }
+
+        /* --- Header --- */
+        .header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1em;
+            margin-bottom: 2em;
+        }
+        .header h1 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 1.2em;
+            color: #666;
+            margin: 0;
+        }
+        .header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2em;
+            margin: 0.2em 0;
+            line-height: 1.2;
+        }
+        .header .authors {
+            font-style: italic;
+            color: #555;
+        }
+
+        /* --- Prominent Download Button --- */
+        .download-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.8em 1.5em;
+            margin: 1.5em 0;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .download-button:hover {
+            background-color: #0b3a82;
+        }
+
+        /* --- Main Content Sections --- */
+        .section {
+            margin-bottom: 2.5em;
+        }
+        .section h3 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+            color: var(--primary-color);
+        }
+        
+        /* --- Metadata Display --- */
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 0.5em 1em;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            font-size: 0.9em;
+        }
+        .metadata-grid dt {
+            font-weight: bold;
+            color: #666;
+        }
+        .metadata-grid dd {
+            margin: 0;
+        }
+        .metadata-grid dd a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .metadata-grid dd a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Keywords --- */
+        .keywords-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .keywords-list li {
+            display: inline-block;
+            background-color: var(--light-gray);
+            padding: 0.3em 0.8em;
+            border-radius: 4px;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+            font-size: 0.85em;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+        }
+
+        /* --- Citation Block --- */
+        .citation-box {
+            background-color: var(--light-gray);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 1em 1.5em;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            margin-top: 4em;
+            padding-top: 1.5em;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        /* --- Responsive Layout --- */
+        @media (max-width: 600px) {
+            .container {
+                margin: 1em auto;
+                padding: 0 1em;
+            }
+            .header h2 {
+                font-size: 1.8em;
+            }
+            .metadata-grid {
+                grid-template-columns: 1fr; /* Stack on mobile */
+            }
+            .metadata-grid dt {
+                border-bottom: 1px dotted var(--border-color);
+                padding-bottom: 0.2em;
+                margin-bottom: 0.2em;
+            }
+        }
+
+        /* --- Classy Print Styles --- */
+        @media print {
+            body {
+                font-family: 'Times New Roman', serif;
+                color: #000;
+            }
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .download-button, .footer {
+                display: none;
+            }
+            .header, .section {
+                border: none;
+                page-break-inside: avoid;
+            }
+            h1, h2, h3 {
+                color: #000 !important;
+            }
+            .metadata-grid a {
+                color: #000;
+                text-decoration: none;
+            }
+            .metadata-grid a[href^="http"]::after {
+                content: " (" attr(href) ")";
+                font-size: 0.8em;
+            }
+            .citation-box {
+                background: #eee;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="header">
+            <h1>Amateur Research Association</h1>
+            <h2>Errata: Volume 25.1</h2>
+            
+            <p class="authors">
+                
+                    The ARA Editorial Board
+                
+            </p>
+        </header>
+
+        <main>
+            <a href="../" class="download-button">Download PDF / Access Full Text</a>
+
+            
+            <section class="section">
+                <h3>Abstract</h3>
+                <p>Errata for Volume 25.1. No corrections are noted for this inaugural issue.
+</p>
+            </section>
+            
+
+            <section class="section">
+                <h3>Publication Details</h3>
+                <dl class="metadata-grid">
+                    <dt>Authors</dt>
+                    <dd>
+                        
+                            <div>
+                                The ARA Editorial Board
+                                
+                                    <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">(ORCID)</a>
+                                
+                                
+                                    <em>- Amateur Research Association</em>
+                                
+                            </div>
+                        
+                    </dd>
+                    
+                    <dt>Published</dt>
+                    <dd></dd>
+                    
+                    <dt>Volume</dt>
+                    <dd>
+                        <a href="../index.html">2025.1</a>
+                    </dd>
+
+                    <dt>Identifier</dt>
+                    <dd>2025.1.5</dd>
+
+                    <dt>DOI</dt>
+                    <dd>
+                        
+                            Pending
+                        
+                    </dd>
+
+                    
+                    <dt>Keywords</dt>
+                    <dd>
+                        <ul class="keywords-list">
+                        
+                            <li>errata</li>
+                        
+                            <li>corrections</li>
+                        
+                        </ul>
+                    </dd>
+                    
+                </dl>
+            </section>
+
+            <section class="section">
+                <h3>How to Cite</h3>
+                <div class="citation-box">
+                    
+                    The ARA Editorial Board. (). Errata: Volume 25.1. *Amateur Research Association*, *2025.1.5. 
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Published by the Amateur Research Association.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
