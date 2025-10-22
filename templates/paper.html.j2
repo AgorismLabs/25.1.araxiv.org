@@ -219,7 +219,7 @@
         </header>
 
         <main>
-            <a href="../{{ item.pdf_link }}" class="download-button">Download PDF / Access Full Text</a>
+            <a href="{{ item.metadata.permalink }}.pdf" class="download-button">Download PDF / Access Full Text</a>
 
             {% if item.metadata.abstract %}
             <section class="section">
